@@ -1,0 +1,12 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    background-color: #968e8e94;
+    padding: 12px;
+    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+}

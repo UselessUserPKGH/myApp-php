@@ -1,0 +1,23 @@
+.header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    background-color: #968e8e94;
+    padding: 12px;
+    border-radius: 0 0 20px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.header__nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header__nav-item {
+    cursor: pointer;
+}
+
+.header__nav-item:hover {
+    color: #000;
+}
