@@ -21,3 +21,9 @@
 .header__nav-item:hover {
     color: #000;
 }
+
+@media (max-width: 1000px) {
+    .header {
+        display: none;
+    }
+}

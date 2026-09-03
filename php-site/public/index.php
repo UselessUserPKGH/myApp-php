@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -25,8 +25,9 @@
                         <p class="login__logo-item">Phomance</p>
                     </div>
                     <form class="form">
-                        <div class="form__block">
-                            <p>Для размещения своих фотографий войдите в аккаунт</p>
+                        <div class="form__header">
+                            <p class="form__header-tittle">Регистрация</p>
+                            <p class="form__header-subtitle">Размещайте свои фотографии, сохраняйте понравившиеся</p>
                         </div>
                         <div class="form__block">
                             <div class="label">Email</div>

@@ -31,6 +31,21 @@
     padding: 20px;
 }
 
+.form__header {
+    text-align: center;
+    margin-top: -100px;
+    margin-bottom: 20px;
+}
+
+.form__header-tittle {
+    font-size: 2.3em;
+    margin-bottom: 10px;
+}
+
+.form__header-subtitle {
+    color: #ffffff88;
+}
+
 .form__block {
     width: 100%;
 }
@@ -124,6 +139,11 @@
         color: #000;
         font-size: 50px;
     }
+
+    .form__header {
+        display: none;
+    }
+
     .login__content {
         display: none;
     }

@@ -10,3 +10,9 @@
     backdrop-filter: blur(10px);
     white-space: nowrap;
 }
+
+@media (max-width: 1000px) {
+    .footer {
+        display: none;
+    }
+}
