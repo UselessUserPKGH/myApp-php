@@ -5,7 +5,15 @@
 
 @font-face {
     font-family: 'ArkanaScript';
-    src: url('../fonts/ArkanaScript.ttf');
+    src: url('../fonts/ArkanaScript.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MTSans';
+    src: url('../fonts/MTSans-RegularCondensed.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -34,6 +42,7 @@ button {
 body,
 html {
     height: 100%;
+    font-family: 'MTSans', sans-serif;
 }
 
 .wrapper {

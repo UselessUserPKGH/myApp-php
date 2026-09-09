@@ -113,6 +113,7 @@
     padding: 15px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 0 5px 1px #a19797, 0 0 12px 2px #a19797;
 }
 
 .login__content-text {
