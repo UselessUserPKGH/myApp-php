@@ -24,7 +24,7 @@
                     <div class="login__logo">
                         <p class="login__logo-item">Phomance</p>
                     </div>
-                    <form class="form">
+                    <form class="form" action="registr.php" method="post">
                         <div class="form__header">
                             <p class="form__header-tittle">Регистрация</p>
                             <p class="form__header-subtitle">Размещайте свои фотографии, сохраняйте понравившиеся</p>
