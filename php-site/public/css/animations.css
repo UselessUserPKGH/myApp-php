@@ -1,0 +1,29 @@
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 2px 1px #a19797, 0 0 5px 2px #a19797;
+    }
+
+    to {
+        box-shadow: 0 0 18px 1px #a19797, 0 0 20px 2px #a19797;
+    }
+}
+
+@keyframes wave {
+    0% {
+        box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 12px 10px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}

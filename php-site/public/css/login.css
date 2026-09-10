@@ -40,6 +40,7 @@
 .form__header-tittle {
     font-size: 2.3em;
     margin-bottom: 10px;
+    text-shadow: 0 0 1px #fff, 0 0 3px #ffffffab;
 }
 
 .form__header-subtitle {
@@ -48,6 +49,37 @@
 
 .form__block {
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+.form__block::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #494747;
+    z-index: 1;
+    border-radius: 20px;
+    filter: blur(10px);
+    box-shadow: 0 0 12px #5a5757, 0 0 12px #4e4b4bb2;
+    animation: spin 7s infinite ease-in-out alternate;
+}
+
+.form__block::after {
+    position: absolute;
+    content: '';
+    z-index: 2;
+    inset: 1px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #0a0c12, #1f1f20);
+}
+
+.form__block * {
+    position: relative;
+    z-index: 3;
 }
 
 .form__block p {
@@ -60,10 +92,15 @@
     font-size: 20px;
     margin-bottom: 10px;
     padding-left: 12px;
+    text-shadow: 0 0 2px #fff;
+}
+
+.input:focus {
+    border: 1px solid #ffffff62;
 }
 
 .form__block input {
-    border: 1px solid #ffffff88;
+    border: 1px solid #ffffff33;
     border-radius: 100px;
     width: 100%;
     height: 2.5em;
@@ -78,20 +115,15 @@
     border-radius: 100px;
     font-size: 1.2em;
     font-weight: 900;
-    
+
+}
+
+.login__form-button {
+    box-shadow: 0 0 10px 1px #fff;
 }
 
 .login__form-button:hover {
-    animation: wave 0.8s ease-out;
-}
-
-@keyframes wave {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    100% {
-        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
-    }
+    animation: wave 1.2s ease-in-out;
 }
 
 .login__content {
@@ -113,12 +145,16 @@
     padding: 15px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 5px 1px #a19797, 0 0 12px 2px #a19797;
+    animation: pulse 2s infinite ease-in-out alternate;
 }
 
 .login__content-text {
     font-size: 28px;
     margin-bottom: 20px;
+}
+
+.checkbox {
+    margin-left: 8px;
 }
 
 .login__content-sign {
@@ -135,7 +171,7 @@
 
 @media (max-width: 1000px) {
     .login__logo-item {
-        text-shadow: 0 0 9px #0c0c0c, 0 0 20px #d4dbdb; 
+        text-shadow: 0 0 9px #0c0c0c, 0 0 20px #d4dbdb;
         text-align: center;
         color: #000;
         font-size: 50px;

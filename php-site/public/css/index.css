@@ -2,6 +2,7 @@
 @import url(login.css);
 @import url(footer.css);
 @import url(registr.css);
+@import url(animations.css);
 
 @font-face {
     font-family: 'ArkanaScript';
@@ -47,7 +48,7 @@ html {
 
 .wrapper {
     height: 100%;
-    background: linear-gradient(#0a0c12, #34353a) ;
+    background: linear-gradient(#0a0c12, #242425);
     color: #f1f1f1;
 }
 
