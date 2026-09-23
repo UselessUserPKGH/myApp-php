@@ -1,0 +1,45 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(100% - 15px));
+    width: fit-content;
+    background-color: #968e8e94;
+    padding: 12px;
+    border-radius: 20px 20px 0 0;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.footer p {
+    transform: translateY(100%);
+    transition: all 0.7s;
+}
+
+.footer:hover {
+    transform: translateX(-50%) translateY(0);
+}
+
+.footer:hover * {
+    transform: translateY(0);
+}
+
+.grapper {
+    width: 30%;
+    height: 3px;
+    background: #ffffff7e;
+    border-radius: 100px;
+    margin-top: -6px;
+    margin-bottom: 13px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .footer {
+        display: none;
+    }
+}

@@ -1,8 +1,9 @@
 <?php
-
-$email = $_POST["email"];
-$password = $_POST["password"];
-
+/** @var array $user */
+$id = $user["id"];
+$email = $user["email"];
+$password = $user["password"];
+$username = $user["username"];
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ $password = $_POST["password"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
 <body>
@@ -23,12 +24,20 @@ $password = $_POST["password"];
                 <h3 class="user__data-title">Данные пользователя</h3>
                 <ul class="user__data-list">
                     <li class="user__data-item">
+                        <div class="key">ID:</div>
+                        <div class="value"><?= $id ?></div>
+                    </li>
+                    <li class="user__data-item">
                         <div class="key">Email:</div>
                         <div class="value"><?= $email ?></div>
                     </li>
                     <li class="user__data-item">
                         <div class="key">Password:</div>
                         <div class="value"><?= $password ?></div>
+                    </li>
+                    <li class="user__data-item">
+                        <div class="key">Username:</div>
+                        <div class="value"><?= $username ?></div>
                     </li>
                 </ul>
             </div>

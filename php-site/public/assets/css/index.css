@@ -44,6 +44,7 @@ body,
 html {
     height: 100%;
     font-family: 'MTSans', sans-serif;
+    overflow-x: hidden;
 }
 
 .wrapper {
