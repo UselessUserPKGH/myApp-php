@@ -1,22 +1,26 @@
 <?php
 
 require __DIR__ . "/../controllers/UserController.php";
-
-$userController = new UserController();
+require_once  __DIR__ . "/../error/ApiError.php";
 
 $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
-switch ($uri) {
-    case '':
-        $userController->registr();
-        break;
-    case 'user':
-        $userController->showUser();
-        break;
-    case 'login':
-        $userController->login();
-        break;
-    default:
-        http_response_code(404);
-        echo '404';
+try {
+    $userController = new UserController();
+    
+    switch ($uri) {
+        case '':
+            $userController->registr();
+            break;
+        case 'user':
+            $userController->showUser();
+            break;
+        case 'login':
+            $userController->login();
+            break;
+        default:
+            throw new ApiError(404, 'маршрут не найден');
+    }
+} catch (Throwable $e) {
+    ApiError::handle($e);
 }

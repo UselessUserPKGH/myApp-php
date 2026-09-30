@@ -1,12 +1,13 @@
 <?php
 
+require_once  __DIR__ . "/../error/ApiError.php";
+
 const VALIDATION_EMAIL_PATTERN = '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i';
 const VALIDATION_PASSWORD_PATTERN = '/^(?=.*[A-Za-z])(?=.*\d).{8,}$/';
 
 function validation_fail($message)
 {
-    http_response_code(400);
-    die("Ошибка валидации: " . $message);
+    throw new ApiError(400, $message);
 }
 
 function validate_username()

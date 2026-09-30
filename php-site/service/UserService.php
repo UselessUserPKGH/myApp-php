@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../error/ApiError.php";
 
 class UserService
 {
@@ -6,7 +7,7 @@ class UserService
     {
         $connective = mysqli_connect("localhost", "belchenko_phpSite", "Admin12345*", "belchenko_phpSite");
         if (!$connective) {
-            die("Ошибка: " . mysqli_connect_error());
+            throw new ApiError(500, 'ошибка подключения к базе данных');
         }
         mysqli_set_charset($connective, "utf8");
         return $connective;
@@ -27,7 +28,7 @@ class UserService
 
         $stmt = mysqli_prepare($this->db, $query);
         if (!$stmt) {
-            die("Ошибка: " . mysqli_error($this->db));
+            throw new ApiError(500, mysqli_error($this->db));
         }
 
         mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordHash);
@@ -37,7 +38,7 @@ class UserService
         if (!$result) {
             $error = mysqli_stmt_error($stmt);
             mysqli_stmt_close($stmt);
-            die("Ошибка: " . $error);
+            throw new ApiError(500, $error);
         }
 
         $id = mysqli_stmt_insert_id($stmt);
@@ -59,7 +60,7 @@ class UserService
         $result = mysqli_query($this->db, $query);
 
         if (!$result) {
-            die("Ошибка: " . mysqli_error($this->db));
+            throw new ApiError(500, mysqli_error($this->db));
         }
 
         return mysqli_fetch_assoc($result);
