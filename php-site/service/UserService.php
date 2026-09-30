@@ -21,20 +21,28 @@ class UserService
 
     public function createUser($username, $email, $password): array
     {
-        $username = mysqli_real_escape_string($this->db, $username);
-        $email = mysqli_real_escape_string($this->db, $email);
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO user(username, email, password) 
-            VALUES ('$username', '$email', '$passwordHash')";
+        $query = "INSERT INTO user(username, email, password) VALUES (?, ?, ?)";
 
-        $result = mysqli_query($this->db, $query);
-
-        if (!$result) {
+        $stmt = mysqli_prepare($this->db, $query);
+        if (!$stmt) {
             die("Ошибка: " . mysqli_error($this->db));
         }
 
-        $id = mysqli_insert_id($this->db);
+        mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordHash);
+
+        $result = mysqli_stmt_execute($stmt);
+
+        if (!$result) {
+            $error = mysqli_stmt_error($stmt);
+            mysqli_stmt_close($stmt);
+            die("Ошибка: " . $error);
+        }
+
+        $id = mysqli_stmt_insert_id($stmt);
+
+        mysqli_stmt_close($stmt);
 
         return [
             'id' => $id,

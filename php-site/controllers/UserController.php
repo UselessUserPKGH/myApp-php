@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . "/../service/UserService.php";
+require __DIR__ . "/../utils/validation.php";
 
 class UserController
 {
@@ -14,9 +15,9 @@ class UserController
     public function registr()
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $email = $_POST["email"] ?? "";
-            $password = $_POST["password"] ?? "";
-            $username = $_POST["username"] ?? "";
+            $username = validate_username();
+            $email = validate_email();
+            $password = validate_password();
 
             $user = $this->userService->createUser($username, $email, $password);
 
@@ -38,7 +39,8 @@ class UserController
         require __DIR__ . "/../public/pages/user.php";
     }
 
-    public function login() {
+    public function login()
+    {
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
             require __DIR__ . "/../public/pages/login.php";
         }
