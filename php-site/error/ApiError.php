@@ -15,8 +15,11 @@ class ApiError extends RuntimeException
     public function sendResponse(): void
     {
         http_response_code($this->getStatusCode());
-        header("Content-Type: application/json; charset=utf-8");
-        echo json_encode(['error' => $this->getMessage()], JSON_UNESCAPED_UNICODE);
+
+        $message = $this->getMessage();
+        $status = $this->getStatusCode();
+
+        require __DIR__ . "/../public/pages/error.php";
     }
 
     public static function handle(Throwable $e): void

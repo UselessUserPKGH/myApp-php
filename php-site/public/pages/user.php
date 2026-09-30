@@ -25,19 +25,19 @@ $username = $user["username"];
                 <ul class="user__data-list">
                     <li class="user__data-item">
                         <div class="key">ID:</div>
-                        <div class="value"><?= $id ?></div>
+                        <div class="value"><?= htmlspecialchars($id) ?></div>
                     </li>
                     <li class="user__data-item">
                         <div class="key">Email:</div>
-                        <div class="value"><?= $email ?></div>
+                        <div class="value"><?= htmlspecialchars($email) ?></div>
                     </li>
                     <li class="user__data-item">
                         <div class="key">Password:</div>
-                        <div class="value"><?= $password ?></div>
+                        <div class="value"><?= htmlspecialchars($password) ?></div>
                     </li>
                     <li class="user__data-item">
                         <div class="key">Username:</div>
-                        <div class="value"><?= $username ?></div>
+                        <div class="value"><?= htmlspecialchars($username) ?></div>
                     </li>
                 </ul>
             </div>
